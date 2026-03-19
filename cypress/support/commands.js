@@ -97,3 +97,29 @@ Cypress.Commands.add('presionarAccionRegistroTabla', (registro, textoOpcion) => 
 
     if (textoOpcion == 'Detalle') cy.get('#itemDetails').should('be.visible');
 })
+
+Cypress.Commands.add('ingresarMenu', (menu) => {
+    cy.visit("/");
+    cy.get('.navbar-nav').contains(menu).click({ force: true });
+    // Pediende validar si es necesario cambiar por una petición
+    cy.get("#resultsDiv").should('exist');
+})
+
+Cypress.Commands.add('presionarAccionRegistroTabla', (opcion) => {
+    cy.get("table.table tbody tr").as('registros');
+    cy.get('@registros').should('contain', registro)
+
+    cy.get('@registros').contains(registro).closest("tr").find(`td.actions a[data-original-title="${textoOpcion}"]`).click({ force: true });
+})
+
+Cypress.Commands.add('buscarRegistroTabla', (texto) => {
+    cy.get("#texto").clear().type(texto, { delay: 20 });
+    cy.get("#filters_form input#texto")
+        .siblings("span", { log: false })
+        .get('button[type="submit"]', { log: false })
+        .click();
+
+    cy.get('#mainPanel > .form-loading > div').should('not.be.visible')
+
+    cy.get("table tbody tr").first().should('contain', texto);
+})
