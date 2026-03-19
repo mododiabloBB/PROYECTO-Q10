@@ -1,4 +1,4 @@
 Feature: Inicio de sesión
 
-    Background:
+    Scenario: Login:
         Given El usuario ha iniciado sesión en el sistema correctamente
