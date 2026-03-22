@@ -27,7 +27,7 @@ export default defineConfig({
         },
         // Ruta de los steps, esto debe definirse ya que la ruta por defecto es en support, pero al sacarla de esta el cucumber no sabe cual sería la ruta
         env: {
-            stepDefinitions: "cypress/e2e/steps/**/*.{js,ts}"
+            stepDefinitions: "cypress/e2e/step/**/*.{js,ts}"
         }
     }
 });
