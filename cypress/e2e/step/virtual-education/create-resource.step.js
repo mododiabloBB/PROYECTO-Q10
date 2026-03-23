@@ -4,7 +4,7 @@ import {CreateResourceTask} from '@task/virtual-education/create-resource.task'
 import {TableAction} from '@action/common/table.action'
 import {CreatedResourceAssertion} from '@assertion/virtual-education/create-resource.assertion'
 
-When('el usuario ingresar al curso virtual pulsando la acción {string}', (action) => {
+When('El usuario ingresar al curso virtual pulsando la acción {string}', (action) => {
     TableAction.clickAction(dataCourse.name, action)
 })
 
@@ -34,7 +34,7 @@ When('El usuario presionar el boton para guardar el recurso', () => {
     CreateResourceTask.createResource()
 })
 
-When('El recurso de guarda de forma correcta en el curso virtual', function() {
+Then('El recurso de guarda de forma correcta en el curso virtual', function() {
     const title = this.resourceTitle
     const description = this.resourceDescription
 
