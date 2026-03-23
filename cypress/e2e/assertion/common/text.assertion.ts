@@ -7,4 +7,10 @@ export class TextAssertion {
             expect(text).have.contain(textExpected)
         })
     }
+
+    static haveValue (element: string, valueExpected: string) {
+        TextQuestion.takeValueInput(element).then(value => {
+            expect(value).to.contains(valueExpected)
+        })
+    }
 }

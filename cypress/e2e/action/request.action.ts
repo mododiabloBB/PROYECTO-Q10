@@ -1,7 +1,7 @@
-export class WaitRequest {
-    static waitRequest (type: string, method: string, request: () => Cypress.Chainable) {
-        cy.intercept(type, method).as('Peticion')
-        request()
+export class WaitAction {
+    static waitRequest (method: string, request: string, action: () => void) {
+        cy.intercept(method, request).as('Peticion')
+        action()
         cy.wait('@Peticion')
     }
 }

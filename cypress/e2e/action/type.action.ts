@@ -1,5 +1,6 @@
-export class Type {
+export class TypeAction {
+    
     static typeIn (elemento: string, texto: string) {
-        cy.get(elemento).type(texto)
+        cy.get(elemento).clear().type(texto, {delay: 20})
     }
 }
