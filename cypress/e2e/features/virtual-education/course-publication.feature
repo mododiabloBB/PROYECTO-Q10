@@ -1,4 +1,4 @@
-Feature: Gestión de cursos virtuales
+Feature: Gestión de cde publicación de cursos virtuales
 
     Background: Login
         Given El usuario ha iniciado sesión en el sistema correctamente

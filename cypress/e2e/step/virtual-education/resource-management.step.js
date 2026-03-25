@@ -1,11 +1,13 @@
-import dataCourse from "../../../fixtures/virtual-education/course.json"
+import dataCourse from "@fixtures/virtual-education/course-management.json"
 import {When, Then} from '@badeball/cypress-cucumber-preprocessor'
 import {ResourceManagementTask} from '@task/virtual-education/resource-management.task'
 import {TableAction} from '@action/common/table.action'
 import {CreatedResourceAssertion} from '@assertion/virtual-education/resource-management.assertion'
+import {ModalAction} from '@action/common/modal.action'
 
-When('El usuario ingresar al curso virtual pulsando la acción {string}', (action) => {
-    TableAction.clickAction(dataCourse.name, action)
+// Escenarios: Crear recursos
+When('El usuario ingresar al curso virtual {string} pulsando la acción {string}', ( course, action) => {
+    TableAction.clickAction(dataCourse[course], action)
 })
 
 When('El usuario presionar la acción para crear un nuevo recursos', () => {
@@ -39,4 +41,26 @@ Then('El recurso de guarda de forma correcta en el curso virtual', function() {
     const description = this.resourceDescription
 
     CreatedResourceAssertion.createdResource(title, description)
+}) 
+
+
+// Escenarios: Eliminar recursos
+
+When('El usuario ingresar al detallado del recurso {string}', function(resource) {
+    this.nameResource = resource
+    ResourceManagementTask.detailResource(resource)
+})
+
+When('El usuario hace clic en la acción {string} del recurso', (action) => {
+    ResourceManagementTask.deleteResource(action)
+})
+
+When('El usuario confirma la eliminación del recurso de tipo', () =>{
+    ModalAction.sudmitModalForm()
+})
+
+Then('El recurso se elimina del curso virtual', function() {
+    const resource = this.nameResource
+
+    ResourceManagementTask.validateResourceDeleted(resource)
 })

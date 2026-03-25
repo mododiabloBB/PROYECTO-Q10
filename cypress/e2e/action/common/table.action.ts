@@ -27,6 +27,21 @@ export class TableAction {
         if (action == 'Detalle') cy.get('#itemDetails').should('be.visible')
     }
 
+
+    // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+        // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+            // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                    // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                        // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                            // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                                // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                                    // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                                        // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                                            // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                                                // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+                                                    // ESTO ES UN ASSERTION CAMBIARLO RAPIDO
+
     static validateActionNotExist(register: string, action: string) {
         cy.contains(TableUI.trList, register)
             .closest('tr')

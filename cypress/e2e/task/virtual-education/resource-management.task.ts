@@ -37,4 +37,20 @@ export class ResourceManagementTask {
     static createResource () {
         WaitAction.waitRequest('POST', '**/EducacionVirtual/v3/**/Actualizar', () => ClickAction.clickElement(ResourceManagementUI.btnSubmit))
     }
+
+    static detailResource (resource: string) {
+        WaitAction.waitRequest('GET', `**/EducacionVirtual/v3/**/**`, () => ClickAction.clickElementByText(ResourceManagementUI.datailResource, resource))
+        VisibleAssertion.shouldBeVisible(ResourceManagementUI.descriptionResourceCreated)
+
+    }
+
+    static deleteResource (action : string) {
+        ClickAction.clickElement(ResourceManagementUI.optionResource)
+        VisibleAssertion.shouldBeVisible(ResourceManagementUI.optionDelete)
+        ClickAction.clickElementByText(ResourceManagementUI.optionDelete, action)
+    }
+
+    static validateResourceDeleted (resource: string) {
+        TextAssertion.notHaveText(ResourceManagementUI.datailResource, resource)
+    }
 }
