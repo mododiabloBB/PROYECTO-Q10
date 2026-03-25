@@ -13,6 +13,7 @@ export class ResourceManagementTask {
     }
 
     static selectResource (resource: string) {
+        // AGREGAR ESPERA DE NO VISUALIZACION DE LOADER
         ClickAction.clickElementByText(ResourceManagementUI.listOfResource, resource)
         TextAssertion.haveText(ResourceManagementUI.resourceLabel, resource)
     }
@@ -39,7 +40,8 @@ export class ResourceManagementTask {
     }
 
     static detailResource (resource: string) {
-        WaitAction.waitRequest('GET', `**/EducacionVirtual/v3/**/**`, () => ClickAction.clickElementByText(ResourceManagementUI.datailResource, resource))
+        // AGREGAR ESPERA DE VISUALIZACION DE ELEMENTO A PRESIONAR
+        WaitAction.waitRequest('GET', `**/EducacionVirtual/v3/*/*`, () => ClickAction.clickElementByText(ResourceManagementUI.datailResource, resource))
         VisibleAssertion.shouldBeVisible(ResourceManagementUI.descriptionResourceCreated)
 
     }
@@ -51,6 +53,6 @@ export class ResourceManagementTask {
     }
 
     static validateResourceDeleted (resource: string) {
-        TextAssertion.notHaveText(ResourceManagementUI.datailResource, resource)
+        TextAssertion.notContainTextInsideOptionalElements(ResourceManagementUI.datailResource, resource)
     }
 }

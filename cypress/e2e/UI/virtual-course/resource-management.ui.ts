@@ -12,7 +12,7 @@ export class ResourceManagementUI {
     static titleResourceCreated = '#load-container h5'
     static descriptionResourceCreated = '#load-container .clearfix p'
     static datailResource = '#load-container .edv-recursos-item a span'
-    static optionResource = '#load-container .edv-options-btn:visivle'
+    static optionResource = '#load-container .edv-options-btn:visible'
     static optionDelete = '#load-container .dropdown-menu li a:visible'
 
 }
