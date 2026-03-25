@@ -1,7 +1,7 @@
 import {ClickAction} from '@action/click.action'
-import {CreateVirtualCourseUI} from '@ui/virtual-course/create-virtual-course.ui'
+import {CreateVirtualCourseUI} from '@ui/virtual-course/virtual-course-management.ui'
 
-export class SelectVirtualCourseCreationTypeTask {
+export class CourseManagementTask {
 
     static selectTemplate () {
         ClickAction.clickElement(CreateVirtualCourseUI.btnFromTemplate)

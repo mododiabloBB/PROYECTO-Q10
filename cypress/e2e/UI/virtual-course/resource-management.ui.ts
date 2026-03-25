@@ -1,4 +1,4 @@
-export class CreateResorceUI {
+export class ResourceManagementUI {
     static dropdownResource = '#load-container .dropdown:visible'
     static containerOfResorce = '#load-container .dropdown .crear-recurso'
     static listOfResource = '#load-container .dropdown .crear-recurso li a'
