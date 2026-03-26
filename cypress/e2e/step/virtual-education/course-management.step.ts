@@ -7,7 +7,7 @@ import {ModalAction} from '@action/common/modal.action'
 
 // Escenario: Crear curso virtual
 
-When('El usuario hace clic en la acción {string} del curso', (action) => {
+When('El usuario hace clic en la acción {string} del curso', (action: string) => {
     TableAction.clickAction(dataCourse.nameCourse, action)
 })
 
@@ -21,7 +21,8 @@ Then('El curso virtual se crea exitosamente y su vista carga de forma correcta',
 
 // Escenario: Eliminar curso virtual
 
-When('El usuario hace clic en la acción {string} del curso virtual', function(action) {
+When('El usuario hace clic en la acción {string} del curso virtual', function(action: string) {
+    // EN UN FUTURO PROXIMO VALIDAR LA POSIBILIDAD DE CAMBIAR, CUANDO SE AGREGUE EL FUNCIONAMIENTO DE LOS ACTORES.
     this.actionDelete = action
     TableAction.clickAction(dataCourse.nameCourse, action)
 })
