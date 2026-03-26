@@ -8,19 +8,8 @@ export class TextAssertion {
         })
     }
 
-    // NUNCA SALE DEL IF, VALIDAR MOTIVO
-
-    static notContainTextInsideOptionalElements(element: string, textExpected: string) {
-        cy.get('body').then(($body) => {
-            const elements = $body.find(element)
-
-            if (elements.length === 0) {
-                expect(true).to.equal(true)
-                cy.log(`ULTIMO INTENTO`)
-                return
-            }
-
-            const text = Cypress.$(elements).text()
+        static notHaveText(element: string, textExpected: string) {
+        TextQuestion.takeText(element).then(text => {
             expect(text).to.not.contain(textExpected)
         })
     }

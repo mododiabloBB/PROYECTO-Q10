@@ -11,7 +11,7 @@ export class ResourceManagementUI {
     static btnSubmit = '#edv-submit-btn'
     static titleResourceCreated = '#load-container h5'
     static descriptionResourceCreated = '#load-container .clearfix p'
-    static datailResource = '#load-container .edv-recursos-item a span'
+    static listOfResources = '#edv-content div:visible'
     static optionResource = '#load-container .edv-options-btn:visible'
     static optionDelete = '#load-container .dropdown-menu li a:visible'
 

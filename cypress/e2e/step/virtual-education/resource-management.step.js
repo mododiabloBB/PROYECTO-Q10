@@ -41,20 +41,26 @@ Then('El recurso de guarda de forma correcta en el curso virtual', function() {
     const description = this.resourceDescription
 
     CreatedResourceAssertion.createdResource(title, description)
-}) 
+})
 
+// Escenarios: Editar recursos
+When('El usuario modifica el titulo del recurso asignando {string}', () => {
+
+})
+
+When('El usuario modifica la descripción del recurso asignando {string}', {
+
+})
+
+When('El usuario presionar el boton para guardar las modificaciones del recurso', {
+
+})
+
+Then('Las modificaciones del recurso se guardan de forma correcta en el recurso', {
+    
+})
 
 // Escenarios: Eliminar recursos
-
-When('El usuario ingresar al detallado del recurso {string}', function(resource) {
-    this.nameResource = resource
-    ResourceManagementTask.detailResource(resource)
-})
-
-When('El usuario hace clic en la acción {string} del recurso', (action) => {
-    ResourceManagementTask.deleteResource(action)
-})
-
 When('El usuario confirma la eliminación del recurso de tipo', () =>{
     ModalAction.sudmitModalForm()
 })

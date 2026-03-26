@@ -21,16 +21,28 @@ Feature: Gestion de recursos en los cursos virtuales
             | Cuestionario  | Cuestionario automatizacion prueba | Este es un cuetionario creado desde la automatizacion de prueba |
             | Foro          | Foro automatizacion prueba         | Este es un foro creado desde la automatizacion de pruebas       |
 
-
-
-    Scenario: Eliminar recursos <nombreRecursoEliminar>
+    Scenario Outline: Editar recursos <nombreRecurso>
         When El usuario ingresar al detallado del recurso "<tituloRecursoEliminar>"
-        And El usuario hace clic en la acción "Eliminar" del recurso
+        And El usuario presionar la acción para "Editar" el recurso
+        And El usuario modifica el titulo del recurso asignando "<tituloRecurso>"
+        And El usuario modifica la descripción del recurso asignando "<textoRecurso>"
+        And El usuario presionar el boton para guardar las modificaciones del recurso
+        Then Las modificaciones del recurso se guardan de forma correcta en el recurso
+
+        Examples:
+            | nombreRecurso | tituloRecurso                                | textoRecurso                                                    |
+            | Tarea         | Tarea automatizacion prueba - EDITADA        | Esta es una tarea creada desde la automatizacion de pruebas     |
+            | Cuestionario  | Cuestionario automatizacion prueba - EDITADA | Este es un cuetionario creado desde la automatizacion de prueba |
+            | Foro          | Foro automatizacion prueba - EDITADA         | Este es un foro creado desde la automatizacion de pruebas       |
+
+    Scenario Outline: Eliminar recursos <nombreRecursoEliminar>
+        When El usuario ingresar al detallado del recurso "<tituloRecursoEliminar>"
+        And El usuario presionar la acción para "Eliminar" el recurso
         And El usuario confirma la eliminación del recurso de tipo
         Then El recurso se elimina del curso virtual
 
         Examples:
-            | tituloRecursoEliminar              |
-            | Tarea automatizacion prueba        |
-            | Cuestionario automatizacion prueba |
-            | Foro automatizacion prueba         |
+            | tituloRecursoEliminar                        |
+            | Tarea automatizacion prueba - EDITADA        |
+            | Cuestionario automatizacion prueba - EDITADA |
+            | Foro automatizacion prueba - EDITADA         |
