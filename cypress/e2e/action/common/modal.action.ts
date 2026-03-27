@@ -1,5 +1,5 @@
 import {ModalUI} from "@ui/common/modal.ui"
-import {VisibleQuestion} from "@questions/common/visible.question"
+import { VisibleAssertion } from "@assertion/common/visible.assetion";
 
 export class ModalAction {
 
@@ -16,7 +16,6 @@ export class ModalAction {
 
         if (url) {
             cy.wait('@peticionInterceptada')
-            VisibleQuestion.isVisible('.alert-success')
         }
 
         if (metodo == 'POST') {

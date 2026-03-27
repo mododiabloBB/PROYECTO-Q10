@@ -13,6 +13,7 @@ export class ResourceManagementUI {
     static descriptionResourceCreated = '#load-container .clearfix p'
     static listOfResources = '#edv-content div:visible'
     static optionResource = '#load-container .edv-options-btn:visible'
+    static btnEditResource = "#load-container .edv-btn-default"
     static optionDelete = '#load-container .dropdown-menu li a:visible'
 
 }
