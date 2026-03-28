@@ -14,6 +14,10 @@ When ('El usuario busca el curso virtual {string}', (course: string) => {
     TableAction.search(dataCourse[course])
 })
 
+When('El usuario ingresar al curso virtual {string} pulsando la acción {string}', (course: string, action: string) => {
+    TableAction.clickAction(dataCourse[course], action)
+})
+
 // Este este se usa en la ruta '/virtual-education/resource-management.feature'
 When('El usuario ingresar al detallado del recurso {string}', function(resource: string) {
     this.nameResource = resource

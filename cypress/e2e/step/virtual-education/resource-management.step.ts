@@ -6,10 +6,6 @@ import { CreatedResourceAssertion } from '@assertion/virtual-education/resource-
 import { ModalAction } from '@action/common/modal.action'
 
 // Escenarios: Crear recursos
-When('El usuario ingresar al curso virtual {string} pulsando la acción {string}', (course: string, action: string) => {
-    TableAction.clickAction(dataCourse[course], action)
-})
-
 When('El usuario presionar la acción para crear un nuevo recursos', () => {
     ResourceManagementTask.clickDropdownResource()
 })
