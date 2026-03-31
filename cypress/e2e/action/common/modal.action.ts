@@ -1,5 +1,5 @@
 import {ModalUI} from "@ui/common/modal.ui"
-import { VisibleAssertion } from "@assertion/common/visible.assetion";
+import { VisibleAssertion } from "@assertion/common/visible.assertion";
 
 export class ModalAction {
 

@@ -1,5 +1,5 @@
 import {ClickAction} from '@action/click.action'
-import {CreateVirtualCourseUI} from '@ui/virtual-course/virtual-course-management.ui'
+import {CreateVirtualCourseUI} from '@ui/virtual-course/virtual-course.ui'
 
 export class CourseManagementTask {
 

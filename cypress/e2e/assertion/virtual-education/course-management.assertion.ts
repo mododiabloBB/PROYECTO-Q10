@@ -1,4 +1,4 @@
-import {CreateVirtualCourseUI} from '@ui/virtual-course/virtual-course-management.ui'
+import {CreateVirtualCourseUI} from '@ui/virtual-course/virtual-course.ui'
 import {TextAssertion} from '@assertion/common/text.assertion'
 
 export class CourseManagementAssertion {

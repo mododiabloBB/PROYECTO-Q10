@@ -1,4 +1,4 @@
-import {ResourceManagementUI} from '@ui/virtual-course/resource-management.ui'
+import {ResourceManagementUI} from '@ui/virtual-course/resource.ui'
 import {TextAssertion} from '@assertion/common/text.assertion'
 
 export class CreatedResourceAssertion {

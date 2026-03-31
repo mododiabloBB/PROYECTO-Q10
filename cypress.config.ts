@@ -7,6 +7,8 @@ export default defineConfig({
     e2e: {
         baseUrl: "https://site6.q10.com/",
         defaultCommandTimeout: 18000,
+        viewportWidth: 1980,
+        viewportHeight: 1020,
         specPattern: "**/*.feature",
         async setupNodeEvents(
             on: Cypress.PluginEvents,

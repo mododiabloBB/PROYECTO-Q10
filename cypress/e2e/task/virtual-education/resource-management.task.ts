@@ -1,6 +1,6 @@
 import { ClickAction } from '@action/click.action'
-import { ResourceManagementUI } from '@ui/virtual-course/resource-management.ui'
-import { VisibleAssertion } from '@assertion/common/visible.assetion'
+import { ResourceManagementUI } from '@ui/virtual-course/resource.ui'
+import { VisibleAssertion } from '@assertion/common/visible.assertion'
 import { TextAssertion } from '@assertion/common/text.assertion'
 import { TypeAction } from '@action/type.action'
 import { WaitAction } from '@action/request.action'
