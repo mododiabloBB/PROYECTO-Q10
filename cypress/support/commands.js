@@ -30,8 +30,11 @@ Cypress.Commands.add('login', (institucionKey, tipoUsuario) => {
     cy.fixture('login/instituciones').then((instituciones) => {
         // Filtramos los datos de la institución en base al nombre enviado
         const institucion = instituciones[institucionKey];
-        const { aplentId, usuarios } = institucion;
-        const { usuario, contrasenia } = usuarios.find(u => u.rol === tipoUsuario);
+        const { aplentId } = institucion;
+        const credenciales = institucion[tipoUsuario]
+        const {usuario, contrasenia} = credenciales
+
+        // Se construye la URL de la base de datos
         const loginUrl = `login?ReturnUrl=%2F&aplentId=${aplentId}`;
 
         // Creamos la sesión en base a institución y usuario
